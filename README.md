@@ -1,4 +1,4 @@
 # Inventory Management System using PHP
 
-PS: I don't use PHP, making this proect only for college sake
+PS: I Hate PHP :)
 
