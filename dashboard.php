@@ -192,14 +192,14 @@ $connect->close();
 			<thead>
 				<tr>
 					<th>Name</th>
-					<th>Orders in Rupees</th>
+					<th>Orders in ₹</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php while ($orderResult = $userwiseQuery->fetch_assoc()) { ?>
 				<tr>
 					<td><?php echo $orderResult['username']?></td>
-					<td><?php echo $orderResult['totalorder']?></td>
+					<td>₹ <?php echo $orderResult['totalorder']?></td>
 
 				</tr>
 
