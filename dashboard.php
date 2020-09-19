@@ -108,6 +108,27 @@ $connect->close();
 		background-color: #ff9f43;
 		color: #fff;
 	}
+
+	.orders {
+		padding-top: 2rem;
+	}
+
+	table {
+		margin-top: 2rem;
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	th,
+	td {
+		padding: 0.7rem;
+		text-align: center;
+		border: 1px solid #ccc;
+	}
+
+	tbody tr:nth-child(odd) {
+		background: #eee;
+	}
 </style>
 
 <!-- fullCalendar 2.2.5-->
@@ -164,7 +185,31 @@ $connect->close();
 		</div>
 	</div>
 
+	<?php  if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+	<div class="orders">
+		<h2>Orders</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Orders in Rupees</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php while ($orderResult = $userwiseQuery->fetch_assoc()) { ?>
+				<tr>
+					<td><?php echo $orderResult['username']?></td>
+					<td><?php echo $orderResult['totalorder']?></td>
 
+				</tr>
+
+				<?php } ?>
+			</tbody>
+		</table>
+		<!--<div id="calendar"></div>-->
+	</div>
+
+	<?php  } ?>
 </div>
 <!--/row-->
 
